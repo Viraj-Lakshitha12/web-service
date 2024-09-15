@@ -21,10 +21,10 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        services=("api-gateway" "account-management" "wallet" "trading")
+        services=("api-gateway" "account-service" "wallet-service" "trading-service")
         for service in "${services[@]}"; do
-          docker build -t your-dockerhub-username/$service:latest ./$service
-          docker push your-dockerhub-username/$service:latest
+          docker build -t your-dockerhub-viraj952/$service:latest ./$service
+          docker push your-dockerhub-viraj952/$service:latest
         done
 
     - name: Set up Kubernetes CLI
