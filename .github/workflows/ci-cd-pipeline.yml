@@ -21,7 +21,7 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        services=("api-gateway" "account-service" "wallet-service" "trading-service")
+        services=("api-gateway" "account-service" "centralized-logging" "notification-service" "trading-service" "wallet-service")
         for service in "${services[@]}"; do
           docker build -t viraj952/$service:latest ./$service
           docker push viraj952/$service:latest
